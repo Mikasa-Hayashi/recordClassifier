@@ -14,7 +14,7 @@ struct TagInfo
     bool hasParent;
     QString parent;
 
-    TagInfo(const QString & n, const QList<QString> & attrs, bool hasChild, bool hasPar, const QString & child, const QString & par)
+    TagInfo(const QString & n, const QList<QString> & attrs, bool hasChild, const QString & child, bool hasPar, const QString & par)
         : name(n), attributes(attrs), hasChildren(hasChild), children(child), hasParent(hasPar), parent(par)
     {
 

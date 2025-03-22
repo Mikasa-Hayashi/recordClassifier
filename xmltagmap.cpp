@@ -23,3 +23,10 @@ XMLTagMap::XMLTagMap()
         TagInfo("item", {"name"}, false, "", true, "class")
     };
 }
+
+const QList<TagInfo> & XMLTagMap::getValidTags(const QString &fileType) const
+{
+    static QList<TagInfo> emptyList;
+    auto it = tagMap.find(fileType);
+    return (it != tagMap.end()) ? it.value() : emptyList;
+}
