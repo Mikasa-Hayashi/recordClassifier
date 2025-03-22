@@ -30,3 +30,33 @@ const QList<TagInfo> & XMLTagMap::getValidTags(const QString &fileType) const
     auto it = tagMap.find(fileType);
     return (it != tagMap.end()) ? it.value() : emptyList;
 }
+
+QString XMLTagMap::getTagHint(const QString & fileType) const
+{
+    QString hint;
+    if (fileType == "items")
+    {
+        hint = "Допустимые теги для набора записей:\n";
+    }
+    else if (fileType == "classes")
+    {
+        hint = "Допустимые теги для набора классов:\n";
+    }
+    else
+    {
+        return hint;
+    }
+
+    const QList<TagInfo> & tags = getValidTags(fileType);
+    for (const TagInfo & tag : tags)
+    {
+        hint += "<" + tag.name;
+        if (!tag.attributes.isEmpty())
+        {
+            hint += " " + tag.attributes.join("=\"...\" ");
+        }
+        hint += ">";
+
+
+    }
+}
