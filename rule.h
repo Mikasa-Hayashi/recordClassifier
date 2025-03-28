@@ -25,7 +25,7 @@ public:
     int getTargetCount() const;
     int getTargetValue() const;
     QSet<int> getTargetValues() const;
-    void operator=(const Rule & other);
+    Rule & operator=(const Rule & other);
     bool operator==(const Rule & other) const;
 
 private:

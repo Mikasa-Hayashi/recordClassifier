@@ -40,10 +40,11 @@ QSet<Property> Record::getProperties() const
     return properties;
 }
 
-void Record::operator=(const Record &other)
+Record & Record::operator=(const Record &other)
 {
     name = other.name;
     properties = other.properties;
+    return *this;
 }
 
 bool Record::operator==(const Record & other) const

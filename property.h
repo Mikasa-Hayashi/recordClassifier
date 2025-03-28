@@ -13,7 +13,7 @@ public:
     void addValue(const int value);
     QString getName() const;
     QSet<int> getValues() const;
-    void operator=(const Property & other);
+    Property & operator=(const Property & other);
     bool operator==(const Property & other) const;
 
 private:

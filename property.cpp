@@ -26,10 +26,11 @@ QSet<int> Property::getValues() const
     return values;
 }
 
-void Property::operator=(const Property &other)
+Property & Property::operator=(const Property &other)
 {
     name = other.name;
     values = other.values;
+    return *this;
 }
 
 bool Property::operator==(const Property &other) const

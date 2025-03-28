@@ -18,7 +18,7 @@ public:
     bool hasProperty(const QString & propertyName) const;
     QString getName() const;
     QSet<Property> getProperties() const;
-    void operator=(const Record & other);
+    Record & operator=(const Record & other);
     bool operator==(const Record & other) const;
 
 private:

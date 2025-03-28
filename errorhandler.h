@@ -6,8 +6,8 @@
 
 enum class ErrorSituation
 {
-    INVALID_IN_FILE_PATH,
-    INVALID_OUT_FILE_PATH,
+    INVALID_INPUT_FILE_PATH,
+    INVALID_OUTPUT_FILE_PATH,
     XML_SYNTAX_ERROR,
     XML_INVALID_TAG,
     XML_MISSED_TAG,
@@ -56,10 +56,10 @@ struct Error
         QString result;
         switch(situation)
         {
-            case ErrorSituation::INVALID_IN_FILE_PATH:
+            case ErrorSituation::INVALID_INPUT_FILE_PATH:
                 result = QString("Неверно указан файл «%1» с входными данными. Возможно, файл не существует.").arg(file);
                 break;
-            case ErrorSituation::INVALID_OUT_FILE_PATH:
+            case ErrorSituation::INVALID_OUTPUT_FILE_PATH:
                 result = QString("Неверно указан файл «%1» для выходных данных. Возможно, указанного расположения не существует или нет прав на запись.").arg(file);
                 break;
             case ErrorSituation::XML_SYNTAX_ERROR:

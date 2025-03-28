@@ -59,7 +59,7 @@ QSet<int> Rule::getTargetValues() const
     return targetValues;
 }
 
-void Rule::operator=(const Rule &other)
+Rule & Rule::operator=(const Rule &other)
 {
     className = other.className;
     propertyName = other.propertyName;
@@ -67,6 +67,7 @@ void Rule::operator=(const Rule &other)
     targetCount = other.targetCount;
     targetValue = other.targetValue;
     targetValues = other.targetValues;
+    return *this;
 }
 
 bool Rule::operator==(const Rule &other) const
